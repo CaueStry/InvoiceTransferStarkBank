@@ -41,4 +41,8 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.post('/test', (req, res) => {
+  res.status(200).send({ message: 'Test Successful', body: req.body });
+});
+
 module.exports = router;
