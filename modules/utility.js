@@ -1,7 +1,7 @@
 const { DateTime } = require('luxon');
 
 // Environment Variables
-const PORT = process.env.INVOICE_TRANSFER_PORT || 3000;
+const PORT = process.env.INVOICE_TRANSFER_PORT || 8080;
 const ID = process.env.INVOICE_TRANSFER_ID || undefined;
 const KEY = process.env.INVOICE_TRANSFER_KEY || undefined;
 
