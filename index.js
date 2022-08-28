@@ -23,11 +23,6 @@ app.use('/', transactionRoutes);
 let server;
 let port;
 if (utility.HTTPS) {
-  console.log('HTTPS');
-} else {
-  console.log('HTTP');
-}
-if (utility.HTTPS) {
   server = https.createServer({
     key: utility.CERTIFICATE_KEY,
     cert: utility.CERTIFICATE,
@@ -38,7 +33,7 @@ if (utility.HTTPS) {
   port = utility.HTTP_PORT;
 }
 
-server.listen(utility.PORT, () => console.log(`Server listening on port ${port}`));
+server.listen(port, () => console.log(`Server listening on port ${port}`));
 
 // Schedule Invoices
 // Issues 8 to 12 invoices every 3 hours
