@@ -4,7 +4,7 @@ const utility = require('./utility');
 // Issues invoices
 // Returns created invoices
 async function issueInvoices(invoices) {
-  console.log(`Issuing ${invoices.length} Invoice(s)`);
+  console.log(`\n-------Issuing ${invoices.length} Invoice(s)-------\n`);
   return starkbank.invoice.create(invoices);
 }
 
@@ -28,7 +28,7 @@ async function sendRandomInvoices(users) {
 // Sends a transfer
 // Returns the created transfer
 async function issueTransfers(transfers) {
-  console.log(`Issuing ${transfers.length} Transfer(s)`);
+  console.log(`\n-------Issuing ${transfers.length} Transfer(s)-------\n`);
   return starkbank.transfer.create(transfers);
 }
 

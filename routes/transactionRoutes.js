@@ -9,13 +9,15 @@ const router = express.Router();
 router.post('/', (req, res, next) => {
   try {
     if (req.body.event.subscription === 'invoice') {
-      console.log(`Invoice ${req.body.event.log.invoice.id} \n  status: ${req.body.event.log.type} \n  time: ${new Date()}`);
+      console.log(`Invoice ${req.body.event.log.invoice.id}\n  - Status: ${req.body.event.log.type}\n  - Time: ${new Date()}`);
     } else if (req.body.event.subscription === 'transfer') {
-      console.log(`Transfer ${req.body.event.log.transfer.id} \n  status: ${req.body.event.log.type} \n  time: ${new Date()}`);
+      console.log(`Transfer ${req.body.event.log.transfer.id}\n  - Status: ${req.body.event.log.type}\n  - Time: ${new Date()}`);
+    } else {
+      console.log('Unknown Request Received');
     }
     next();
   } catch (err) {
-    console.log('Invalid request received');
+    console.log('Invalid Request Received');
     res.status(400).json({ message: 'Invalid request' });
   }
 });
