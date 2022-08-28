@@ -17,7 +17,8 @@ async function sendRandomInvoices(users) {
       name: user.name,
       taxId: user.taxId,
       amount: utility.getRandomNumber(1, 1000),
-      due: utility.getRelativeISOTime(24, 0, 0),
+      due: utility.getRelativeISOTime(1, 0, 0),
+      expiration: 3600,
       tags: ['Scion'],
     });
   });
@@ -44,6 +45,7 @@ async function sendStarkBankTransfer(amount, id) {
       accountNumber: '6341320293482496',
       accountType: 'payment',
       externalId: `invoice-${id}`,
+      tags: ['invoice-transfer', `invoice-${id}`],
     },
   ]);
 }

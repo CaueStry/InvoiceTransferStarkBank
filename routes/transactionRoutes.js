@@ -9,9 +9,9 @@ const router = express.Router();
 router.post('/', (req, res, next) => {
   try {
     if (req.body.event.subscription === 'invoice') {
-      console.log(`Invoice ${req.body.event.log.invoice.id} status: ${req.body.event.log.type}`);
+      console.log(`Invoice ${req.body.event.log.invoice.id} \n  status: ${req.body.event.log.type} \n  time: ${new Date()}`);
     } else if (req.body.event.subscription === 'transfer') {
-      console.log(`Transfer ${req.body.event.log.transfer.id} status: ${req.body.event.log.type}`);
+      console.log(`Transfer ${req.body.event.log.transfer.id} \n  status: ${req.body.event.log.type} \n  time: ${new Date()}`);
     }
     next();
   } catch (err) {
