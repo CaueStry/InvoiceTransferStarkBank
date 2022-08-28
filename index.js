@@ -1,5 +1,6 @@
-const starkbank = require('starkbank');
 const express = require('express');
+const https = require('https');
+const starkbank = require('starkbank');
 const bodyParser = require('body-parser');
 const authentication = require('./modules/authentication');
 const transactionRoutes = require('./routes/transactionRoutes');
@@ -17,8 +18,13 @@ app.use(bodyParser.json());
 // Transaction Routes Middleware
 app.use('/', transactionRoutes);
 
-// Start Webserver
-app.listen(utility.PORT, () => console.log(`Server listening on port ${utility.PORT}`));
+// Creates and starts HTTPS server
+const httpsServer = https.createServer({
+  key: utility.CERTIFICATE_KEY,
+  cert: utility.CERTIFICATE,
+}, app);
+
+httpsServer.listen(utility.PORT, () => console.log(`Server listening on port ${utility.PORT}`));
 
 // Schedule Invoices
 // Issues 8 to 12 invoices every 3 hours

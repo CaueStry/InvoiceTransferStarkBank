@@ -4,6 +4,8 @@ const { DateTime } = require('luxon');
 const PORT = process.env.INVOICE_TRANSFER_PORT || 8080;
 const ID = process.env.INVOICE_TRANSFER_ID || undefined;
 const KEY = process.env.INVOICE_TRANSFER_KEY || undefined;
+const CERTIFICATE = process.env.INVOICE_TRANSFER_CERTIFICATE || undefined;
+const CERTIFICATE_KEY = process.env.INVOICE_TRANSFER_CERTIFICATE_KEY || undefined;
 
 // Converts the "Z" at the end of an ISO date time to "+00:00"
 // Returns the given date and time ending "+00:00" instead of "Z"
@@ -42,4 +44,6 @@ module.exports = {
   PORT,
   KEY,
   ID,
+  CERTIFICATE_KEY,
+  CERTIFICATE,
 };
