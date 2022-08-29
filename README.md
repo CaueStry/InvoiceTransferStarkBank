@@ -1,6 +1,6 @@
 # Invoice Transfer Stark Bank
 
-Uses the Stark Bank SDK and Webhooks to issue invoices and transfer funds to the Sandbox API and Stark Bank Account.
+Uses the Stark Bank SDK and Webhooks to issue invoices to the Sandbox API and transfer funds to the Stark Bank Account.
 
 ### Stack
 
@@ -15,7 +15,7 @@ Uses the Stark Bank SDK and Webhooks to issue invoices and transfer funds to the
 
 * Create a Stark Bank Sandbox Project and add your private key
 
-* Add a Webhook subscribing to "invoice" and "transfer" and linking to your endpoint URL (Server has to be running in HTTPS mode unless using an HTTPS proxy)
+* Add a Webhook subscribing to "invoice" and "transfer", and link it to your endpoint URL (Server has to be running on HTTPS mode unless using an HTTPS proxy)
 
 ### App Setup
 
