@@ -61,4 +61,4 @@ npm run test
 
 ## Author
 
-* **Caue Pinheiro** - [CaueStry](https://github.com/CaueStry)(cauepnhr@gmail.com)
+* **Caue Pinheiro** - [CaueStry](https://github.com/CaueStry) (cauepnhr@gmail.com)
