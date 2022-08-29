@@ -1,6 +1,6 @@
 # Invoice Transfer Stark Bank
 
-Uses the Stark Bank API and Webhooks to issue invoices and transfer funds.
+Uses the Stark Bank SDK and Webhooks to issue invoices and transfer funds to the Sandbox API and Stark Bank Account.
 
 ### Stack
 
@@ -9,8 +9,15 @@ Uses the Stark Bank API and Webhooks to issue invoices and transfer funds.
 * [Stark Bank SDK](https://starkbank.com/) - Stark Bank SDK
 * [Node Cron](https://www.npmjs.com/package/node-cron/) - Task Scheduler
 * [Luxon](https://moment.github.io/luxon/) - JS Date and Time Wrapper
+* [Jest](https://jestjs.io/) - Testing Framework
 
-### Development Environment Setup
+### Stark Bank Project Setup
+
+* Create a Stark Bank Sandbox Project and add your private key
+
+* Add a Webhook subscribing to "invoice" and "transfer" and linking to your endpoint URL (Server has to be running in HTTPS mode unless using an HTTPS proxy)
+
+### App Setup
 
 * Make sure you have Node.JS, and NPM Installed.
 ```sh
@@ -34,7 +41,7 @@ Uses the Stark Bank API and Webhooks to issue invoices and transfer funds.
     # HTTP/HTTPS Ports (80 and 443 are default)
     export INVOICE_TRANSFER_HTTP_PORT=#YOUR_HTTP_PORT
     export INVOICE_TRANSFER_HTTPS_PORT=#YOUR_HTTPS_PORT
-    # *REQUIRED FOR HTTPS* SSL Certificate (Self-signed is enough)
+    # *REQUIRED FOR HTTPS* SSL Certificate and Certificate Key (Self-signed is enough)
     export INVOICE_TRANSFER_CERTIFICATE=#YOUR_SSL_CERTIFICATE
     export INVOICE_TRANSFER_CERTIFICATE_KEY=#YOUR_SSL_CERTIFICATE_KEY
 ```
@@ -42,6 +49,14 @@ Uses the Stark Bank API and Webhooks to issue invoices and transfer funds.
 * Run the server
 ```sh
 npm start
+```
+
+### Testing
+
+* Make sure the app is already setup
+* This will issue one invoice and one transfer
+```sh
+npm run test
 ```
 
 ## Author
